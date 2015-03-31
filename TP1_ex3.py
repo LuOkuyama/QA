@@ -4,19 +4,16 @@ import math
 
 def coordenadapolares(x, y):
 	r = math.sqrt(math.pow(x,2) + math.pow(y,2))
-	if r == 0:
-		print "coordenadas polares (%d " %r %",qualquer angulo)"
-	else:
-		cosseno = math.acos(x/r)
-		seno = math.asin(y/r)
-		print cosseno
-		print seno
-		#print "coordenadas polares (%d " %r "%s,%f" %cosseno "%s)"
-
-print "digite x"
-x = int(raw_input())
-
-print "digite y"
-y = int(raw_input())
-
-print coordenadapolares(x, y)
+	angulo = math.degrees(math.atan(y/x))
+	print "distancia %f" %r
+	print "angulo %f" %angulo
+	return (r,angulo)
+	
+Ponto = []
+for i in xrange (0,2):
+	print "digite Ponto%d" %(i+1)
+	Ponto = raw_input().split(",")
+	coord = coordenadapolares(int(Ponto[0]), int(Ponto[1]))
+	print Ponto
+	print "coordenadas polares"
+	print coord

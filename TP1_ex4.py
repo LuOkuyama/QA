@@ -4,14 +4,11 @@ import math
 
 def triangulo(A, B, C):
 	if C < A + B:
-		print "eh um quadrado"
+		print "(%d, %d, %d) formam um triangulo retangulo" %(A, B, C)
 		area = (A * B)/2
-		print area
+		print "area = %d" %area
 	else:
-		print "nao eh um quadrado"
-		print A 
-		print B
-		print C
+		print "(%d, %d, %d) nao formam um triangulo retangulo" %(A, B, C)
 
 print "digite cateto A"
 A = int(raw_input())

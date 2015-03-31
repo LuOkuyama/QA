@@ -5,6 +5,7 @@ import math
 def distancia(P1x1, P1y1, P2x2, P2y2):
 	d = math.sqrt(math.pow((P1x1-P2x2),2) + math.pow((P1y1-P2y2),2))
 	print "distancia = %f" %d
+	return d
 
 Lista = []
 Q = True
@@ -21,48 +22,10 @@ print Lista
 
 dmaior = 0
 
-for item1 in xrange(0, len(Lista)-2):
-	for item2 in xrange(1,len(Lista)-1):
-		d = distancia(item1[0], item1[1], item2[0],item2[1])
+for i in xrange(0, len(Lista)-1):
+	for l in xrange(i+1,len(Lista)):
+		d = distancia(Lista[i][0], Lista[i][1], Lista[l][0],Lista[l][1])
 		if d > dmaior:
 			dmaior = d
 
-print dmaior
-
-
-
-
-
-
-
-
-# print distancia(P1x1, P1y1, P2x2, P2y2)
-
-
-# # -*- coding: utf-8 -*-
-
-# from math import sqrt
-# from math import pow
-
-# t1 = (0,0)
-# t2 = (1,1)
-# t3 = (2,2)
-# dm = 0
-# lista = [t1, t2, t3]
-
-# def distancia( t1, t2 ):
-#    "This function return the distance between two points"
-#    d = sqrt( pow(t1[0] - t2[0], 2) + pow(( t1[1] - t2[1] ), 2) )
-#    return d
-
-# for x in xrange(0,len(lista)-1):
-# 	for y in xrange(1,len(lista)):
-# 		d = distancia(lista[x], lista[y])
-# 		if d > dm:
-# 		  dm = d
-# 		print x, y
-
-
-# print "================================="
-# print "Resultado final e: ", dm
-# print "FIM"
+print "a maior distancia eh de: %f" %dmaior
